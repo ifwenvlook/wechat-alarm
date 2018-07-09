@@ -17,7 +17,7 @@ def messages(msg):
     values = {
         "touser": '@all',
         "msgtype": 'text',
-        "agentid": 1000003, #偷懒没有使用变量了，注意修改为对应应用的agentid
+        "agentid": 1000003, #最好使用变量
         "text": {'content': msg},
         "safe": 0
         }
