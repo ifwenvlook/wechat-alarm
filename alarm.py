@@ -78,8 +78,9 @@ def net_ping1():
 #循环任务
 def loop_ping():
      count = 1
-     while count > 0:     
-     	net_ping1() 
+     while count > 0:
+     	time.sleep(5)
+     	net_ping1()
      	timenow = time.time()
      	count += 1
      	print (timenow,count)
