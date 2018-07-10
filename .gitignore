@@ -2,3 +2,6 @@
 *.so
 *.egg
 *.gee-info
+build/
+dist/
+*.spec
