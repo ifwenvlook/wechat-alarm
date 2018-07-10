@@ -1,3 +1,4 @@
+#encoding:utf-8
 import urllib3.request
 import json
 import time
