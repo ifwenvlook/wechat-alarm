@@ -1,5 +1,4 @@
-#encoding:utf-8
-import urllib.request
+import urllib3.request
 import json
 import time
 
@@ -13,7 +12,7 @@ msg ='网络连接异常，请马上检查网络连接，防止掉线'
 
 def get_token(url, corpid, corpsecret):
     token_url = '%s/cgi-bin/gettoken?corpid=%s&corpsecret=%s' % (url, corpid, corpsecret)
-    token = json.loads(urllib.request.urlopen(token_url).read().decode())['access_token']
+    token = json.loads(urllib3.request.urlopen(token_url).read().decode())['access_token']
     return token
 
 #--------------------------------
@@ -35,7 +34,7 @@ def messages(msg):
 #--------------------------------
 def send_message(url,token, data):
         send_url = '%s/cgi-bin/message/send?access_token=%s' % (url,token)
-        respone=urllib.request.urlopen(urllib.request.Request(url=send_url, data=data)).read()
+        respone=urllib3.request.urlopen(urllib3.request.Request(url=send_url, data=data)).read()
         x = json.loads(respone.decode())['errcode']
         # print(x)
         if x == 0:
